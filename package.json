@@ -1,0 +1,13 @@
+{
+  "name": "search-app",
+  "version": "1.0.0",
+  "description": "search app",
+  "main": "server/index.js",
+  "scripts": {
+    "build:client": "npm i --prefix client && npm run --prefix client build",
+    "build:server": "npm i --prefix server && npm run --prefix server build",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node dist/server/index.js"
+  },
+  "author": "Olga Stefanishyna"
+}

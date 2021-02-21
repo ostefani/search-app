@@ -1,0 +1,8 @@
+{
+    "eslint.codeAction.showDocumentation": {
+        "enable": true
+    },
+    "files.insertFinalNewline": true,
+    "editor.trimAutoWhitepace": true,
+    "editor.renderWhitespace": "all",
+}
