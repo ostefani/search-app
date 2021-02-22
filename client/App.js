@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Provider } from 'react-redux';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import theme from 'settings/theme';
 import HomeContainer from 'containers/HomeContainer';
