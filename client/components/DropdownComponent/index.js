@@ -24,7 +24,7 @@ const DropdownComponent = ({
 
     useEffect(() => {
         setHeight(isActive ? container.current.scrollHeight : 0);
-    }, [isActive]);
+    }, [isActive, options]);
 
     useEffect(() => {
         document.addEventListener('click', handleClickOutside);
