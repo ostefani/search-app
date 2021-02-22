@@ -5,13 +5,13 @@ const Container = styled.form.attrs(() => ({ className: 'select-container' }))`
   position: relative;
 `;
 
-const CloseButton = styled.button`
+const CloseButton = styled.button.attrs(() => ({ className: 'close-button', 'aria-label': 'clear-suggestions' }))`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 215px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -20,7 +20,7 @@ const CloseButton = styled.button`
         content: '';
         position: absolute;
         top: 0;
-        left: 0;
+        left: 15;
         transform: rotate(45deg);
         height: 100%;
         width: 2px;
@@ -29,7 +29,7 @@ const CloseButton = styled.button`
     &::after {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 15;
         content: '';
         transform: rotate(-45deg);
         height: 100%;

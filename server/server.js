@@ -6,8 +6,6 @@ const citiesRoute = require('./routes/cities');
 
 const PORT = process.env.PORT || 3001;
 
-console.log('process.env: ', process.env);
-
 const app = express();
 
 app.use(
@@ -15,13 +13,17 @@ app.use(
     express.static('dist/client'),
 );
 
+// Routes
+
 app.use('/api', citiesRoute);
+
+// To serve React app
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve('dist/client/index.html'));
 });
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log(`Server is listening on ${PORT} port`);
 }).on('error', err => {
     console.log(err);

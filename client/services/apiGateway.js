@@ -14,6 +14,7 @@ const getAPI = url => {
         })
         .catch(error => {
             console.log(error);
+            return { status: 'error' };
         });
 };
 

@@ -31,7 +31,7 @@ const Items = styled.ul.attrs(() => ({ className: 'dropdown-list' }))`
   list-style: none;
 `;
 
-const Item = styled.li.attrs(() => ({ className: 'dropdown-item' }))`
+const Item = styled.li.attrs(() => ({ className: 'dropdown-item', 'aria-label': 'search-option' }))`
   padding: 5px;
   cursor: pointer;
   outline: none;

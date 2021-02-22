@@ -4,6 +4,8 @@
   "description": "search app",
   "main": "server/index.js",
   "scripts": {
+    "dev:client": "npm i --prefix client && npm run --prefix client dev",
+    "dev:server": "npm i --prefix server && npm run --prefix server dev",
     "build:client": "npm i --prefix client && npm run --prefix client build",
     "build:server": "npm i --prefix server && npm run --prefix server build",
     "build": "npm run build:client && npm run build:server",

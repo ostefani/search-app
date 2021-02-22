@@ -13,6 +13,7 @@ const getCities = async prefix => {
     }
     catch (e) {
         console.log(e);
+        return null;
     }
 };
 
