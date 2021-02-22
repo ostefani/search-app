@@ -14,7 +14,6 @@ const SelectComponent = ({
     handleSelectOption,
     handleChange,
     handleSubmit,
-    clearOptions,
 }) => {
     const [isDropdownActive, setIsDropdownActive] = useState(false);
 
@@ -39,7 +38,7 @@ const SelectComponent = ({
                 toggleDropdown={toggleDropdown}
             />
             {
-                isDropdownActive && options.length > 0 && <CloseButton onClick={clearOptions} />
+                isDropdownActive && options.length > 0 && <CloseButton onClick={toggleDropdown} />
             }
             <ButtonComponent>Send</ButtonComponent>
         </Container>

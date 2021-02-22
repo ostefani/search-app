@@ -12,8 +12,6 @@ const HomeContainer = () => {
     const [value, setValue] = useState('');
     const [options, setOptions] = useState([]);
 
-    const clearOptions = () => setOptions([]);
-
     const fetchOptions = async inputValue => {
         const { status, response } = await prefetchOptions(inputValue);
         if (status === 'success') {
@@ -25,7 +23,7 @@ const HomeContainer = () => {
         setValue(e.target.value);
 
         if (!e.target.value) {
-            clearOptions();
+            setOptions([]);
         }
         else {
             fetchOptions(e.target.value);
@@ -46,7 +44,6 @@ const HomeContainer = () => {
                 handleSelectOption={setValue}
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
-                clearOptions={clearOptions}
                 options={options}
             />
             <Results>Lorem upsum dolor</Results>

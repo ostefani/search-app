@@ -10,8 +10,8 @@ const CloseButton = styled.button.attrs(() => ({ className: 'close-button', 'ari
     top: 50%;
     transform: translateY(-50%);
     right: 215px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -20,7 +20,7 @@ const CloseButton = styled.button.attrs(() => ({ className: 'close-button', 'ari
         content: '';
         position: absolute;
         top: 0;
-        left: 15;
+        left: 10;
         transform: rotate(45deg);
         height: 100%;
         width: 2px;
@@ -29,7 +29,7 @@ const CloseButton = styled.button.attrs(() => ({ className: 'close-button', 'ari
     &::after {
         position: absolute;
         top: 0;
-        left: 15;
+        left: 10;
         content: '';
         transform: rotate(-45deg);
         height: 100%;
