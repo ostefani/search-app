@@ -10,15 +10,21 @@ const InputComponent = ({
     name,
     onClick,
     onChange,
-}) => (
-    <Container>
-        <Input
-            value={value}
-            name={name}
-            onClick={onClick}
-            onChange={onChange}
-        />
-    </Container>
-);
+}) => {
+    const handleClick = () => {
+        onClick(true);
+    };
+
+    return (
+        <Container>
+            <Input
+                value={value}
+                name={name}
+                onClick={handleClick}
+                onChange={onChange}
+            />
+        </Container>
+    );
+};
 
 export default InputComponent;

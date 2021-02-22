@@ -17,10 +17,6 @@ const SelectComponent = ({
 }) => {
     const [isDropdownActive, setIsDropdownActive] = useState(false);
 
-    const toggleDropdown = () => {
-        setIsDropdownActive(!isDropdownActive);
-    };
-
     return (
         <Container onSubmit={handleSubmit}>
             <InputComponent
@@ -28,17 +24,18 @@ const SelectComponent = ({
                 name="search"
                 placeholder="Search for learning"
                 onChange={handleChange}
-                onClick={toggleDropdown}
+                onClick={setIsDropdownActive}
             />
             <DropdownComponent
                 options={options}
                 isActive={isDropdownActive && options.length > 0}
-                setIsActive={toggleDropdown}
+                setIsActive={setIsDropdownActive}
                 onSelectOption={handleSelectOption}
-                toggleDropdown={toggleDropdown}
             />
             {
-                isDropdownActive && options.length > 0 && <CloseButton onClick={toggleDropdown} />
+                isDropdownActive && options.length > 0 && (
+                    <CloseButton onClick={setIsDropdownActive} />
+                )
             }
             <ButtonComponent>Send</ButtonComponent>
         </Container>

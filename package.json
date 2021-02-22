@@ -11,5 +11,6 @@
     "build": "npm run build:client && npm run build:server",
     "start": "node dist/server/index.js"
   },
-  "author": "Olga Stefanishyna"
+  "author": "Olga Stefanishyna",
+  "dependencies": {}
 }

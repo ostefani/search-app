@@ -12,7 +12,6 @@ const DropdownComponent = ({
     options,
     className,
     onSelectOption,
-    toggleDropdown,
 }) => {
     const [height, setHeight] = useState(0);
     const container = useRef(0);
@@ -37,7 +36,7 @@ const DropdownComponent = ({
     const handleSelectOption = value => {
         if (onSelectOption) {
             onSelectOption(value);
-            toggleDropdown();
+            setIsActive();
         }
     };
 

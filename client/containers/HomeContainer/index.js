@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { debounce } from 'debounce';
+import React, { useEffect, useState } from 'react';
 import SelectComponent from 'components/SelectComponent';
+import useDebounce from 'hooks/useDebounce';
 
 import prefetchOptions from 'services/prefetchOptions';
 
@@ -14,6 +14,7 @@ const TIMEOUT = 1000;
 const HomeContainer = () => {
     const [value, setValue] = useState('');
     const [options, setOptions] = useState([]);
+    const debouncedSearch = useDebounce(value, TIMEOUT);
 
     const fetchOptions = async inputValue => {
         const { status, response } = await prefetchOptions(inputValue);
@@ -24,16 +25,16 @@ const HomeContainer = () => {
 
     const handleChange = async e => {
         setValue(e.target.value);
-        const debounceOptions = debounce(() => {
-            if (!e.target.value) {
-                setOptions([]);
-            }
-            else {
-                fetchOptions(e.target.value);
-            }
-        }, TIMEOUT);
-        debounceOptions();
     };
+
+    useEffect(() => {
+        if (debouncedSearch) {
+            fetchOptions(value);
+        }
+        if (!value) {
+            setOptions([]);
+        }
+    }, [debouncedSearch]);
 
     const handleSubmit = e => {
         e.preventDefault();
