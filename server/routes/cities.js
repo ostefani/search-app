@@ -12,6 +12,7 @@ router.get('/prefetch', async (req, res) => {
     }
     catch (e) {
         console.log(e);
+        res.status(404).json({ status: 'error' });
     }
 });
 
