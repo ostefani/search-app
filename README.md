@@ -10,6 +10,7 @@ Search app, created using JavaScript and PostgreSQL.
 
 - [Node.js](https://nodejs.org/en/) JavaScript runtime
 - [Express](https://expressjs.com/) web framework for Node.js
+- [Elephantsql](https://elephantsql.com) PostgreSQL as a Service
 - [React](https://reactjs.org/) a JavaScript library for building user interfaces
 - [Styled Components](https://www.styled-components.com/) CSS-in-JS
 

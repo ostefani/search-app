@@ -17,7 +17,7 @@ app.use(
 
 app.use('/api', citiesRoute);
 
-// To serve React app
+// To serve build version of React app
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve('dist/client/index.html'));
