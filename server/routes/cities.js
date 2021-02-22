@@ -4,7 +4,6 @@ const getCities = require('../services/getCities');
 const router = express.Router();
 
 router.get('/prefetch', async (req, res) => {
-    console.log('PREFETCH')
     try {
         const { prefix } = req.query;
 
