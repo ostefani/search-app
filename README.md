@@ -2,7 +2,7 @@
 
 Search app, created using JavaScript and PostgreSQL.
 
-## Demo is available here
+## Demo is available here (it was previously deployed on DO an now it's not avalable)
 
 [Demo](http://143.198.20.1/)
 
