@@ -8,10 +8,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.use(
-    cors({ origin: [process.env.FRONT] }),
-    express.static('dist/client'),
-);
+app.use(cors({ origin: [process.env.FRONT] }), express.static('dist/client'));
 
 // Routes
 
@@ -25,7 +22,7 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is listening on ${PORT} port`);
-}).on('error', err => {
+}).on('error', (err) => {
     console.log(err);
     process.exit(1);
 });

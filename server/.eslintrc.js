@@ -21,16 +21,14 @@ module.exports = {
         'no-alert': 'error',
         'linebreak-style': 0,
         'no-nested-ternary': 0,
-        'arrow-parens': ['error', 'as-needed'],
+        'arrow-parens': ['error', 'always'],
         indent: ['error', 4],
         'no-use-before-define': ['error', { functions: false, classes: true }],
-        'brace-style': ['error', 'stroustrup'],
+        'brace-style': ['error', '1tbs'],
         'import/no-extraneous-dependencies': [
             'error',
             {
-                devDependencies: [
-                    './webpack.*.js',
-                ],
+                devDependencies: ['./webpack.*.js'],
             },
         ],
     },

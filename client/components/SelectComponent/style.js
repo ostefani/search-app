@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 const Container = styled.form.attrs(() => ({ className: 'select-container' }))`
-  width: 100%;
-  position: relative;
+    width: 100%;
+    position: relative;
 `;
 
-const CloseButton = styled.button.attrs(() => ({ className: 'close-button', 'aria-label': 'clear-suggestions' }))`
+const CloseButton = styled.button.attrs(() => ({
+    className: 'close-button',
+    'aria-label': 'clear-suggestions',
+}))`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 215px;
+    right: 50px;
     width: 20px;
     height: 20px;
     border: none;
@@ -24,7 +27,11 @@ const CloseButton = styled.button.attrs(() => ({ className: 'close-button', 'ari
         transform: rotate(45deg);
         height: 100%;
         width: 2px;
-        background: ${({ theme: { colors: { primary } } }) => primary};
+        background: ${({
+            theme: {
+                colors: { primary },
+            },
+        }) => primary};
     }
     &::after {
         position: absolute;
@@ -34,11 +41,12 @@ const CloseButton = styled.button.attrs(() => ({ className: 'close-button', 'ari
         transform: rotate(-45deg);
         height: 100%;
         width: 2px;
-        background: ${({ theme: { colors: { primary } } }) => primary};
+        background: ${({
+            theme: {
+                colors: { primary },
+            },
+        }) => primary};
     }
 `;
 
-export {
-    Container,
-    CloseButton,
-};
+export { Container, CloseButton };

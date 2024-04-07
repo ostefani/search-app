@@ -1,43 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InputComponent from 'components/InputComponent';
 import DropdownComponent from 'components/DropdownComponent';
-import ButtonComponent from 'components/ButtonComponent';
 
-import {
-    Container,
-    CloseButton,
-} from './style';
+import { Container, CloseButton } from './style';
 
 const SelectComponent = ({
     options,
     value,
-    handleSelectOption,
-    handleChange,
-    handleSubmit,
+    setListOfCities,
+    handleSetValue,
 }) => {
     const [isDropdownActive, setIsDropdownActive] = useState(false);
 
+    const handleCloseClick = () => {
+        setIsDropdownActive(false);
+        handleSetValue('');
+    };
+
+    const handleSelect = (cityName) => {
+        if (cityName) {
+            setListOfCities((prevList) => [...prevList, cityName]);
+            handleSetValue('');
+        }
+    };
+
+    useEffect(() => {
+        if (value) {
+            setIsDropdownActive(true);
+        } else {
+            setIsDropdownActive(false);
+        }
+    }, [value]);
+
     return (
-        <Container onSubmit={handleSubmit}>
+        <Container>
             <InputComponent
                 value={value}
                 name="search"
                 placeholder="Search for learning"
-                onChange={handleChange}
-                onClick={setIsDropdownActive}
+                setIsActive={setIsDropdownActive}
+                onChange={handleSetValue}
             />
             <DropdownComponent
                 options={options}
                 isActive={isDropdownActive && options.length > 0}
                 setIsActive={setIsDropdownActive}
-                onSelectOption={handleSelectOption}
+                onSelectOption={handleSelect}
             />
-            {
-                isDropdownActive && options.length > 0 && (
-                    <CloseButton onClick={setIsDropdownActive} />
-                )
-            }
-            <ButtonComponent>Send</ButtonComponent>
+
+            {isDropdownActive && options.length > 0 && (
+                <CloseButton onClick={handleCloseClick} />
+            )}
         </Container>
     );
 };

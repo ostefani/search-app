@@ -6,7 +6,7 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
         historyApiFallback: true,
-        contentBase: './',
+        //contentBase: './',
         hot: true,
         port: 3000,
         host: '0.0.0.0',
@@ -15,9 +15,7 @@ module.exports = merge(common, {
         rules: [
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    'file-loader',
-                ],
+                use: ['file-loader'],
             },
         ],
     },
