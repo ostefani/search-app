@@ -6,7 +6,7 @@ Created using JavaScript and PostgreSQL.
 
 ## Demo is available here (it was previously deployed on DO an now it's not avalable)
 
-[Demo](http://http://64.226.104.96:3001/)
+[Demo](http://64.226.104.96:3001/)
 
 ## Tech Stack
 
