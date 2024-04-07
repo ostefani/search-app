@@ -41,3 +41,6 @@ npm run dev:server
 ```
 npm run dev:client
 ```
+
+![screenshot](https://github.com/ostefani/search-app/assets/59526402/0c25df16-be9c-4b3b-90b4-75c3420fe4d3)
+![screenshot](https://github.com/ostefani/search-app/assets/59526402/27f80983-a4de-4296-a278-9fe7f5dd536b)
