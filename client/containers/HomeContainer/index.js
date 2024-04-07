@@ -1,58 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import SelectComponent from 'components/SelectComponent';
-import useDebounce from 'hooks/useDebounce';
+import ResultsItemComponent from 'components/ResultsItemComponent';
+import useOptions from 'hooks/useOptions';
 
-import prefetchOptions from 'services/prefetchOptions';
-
-import {
-    Container,
-    Results,
-} from './style';
-
-const TIMEOUT = 1000;
+import { Container, Results } from './style';
 
 const HomeContainer = () => {
     const [value, setValue] = useState('');
-    const [options, setOptions] = useState([]);
-    const debouncedSearch = useDebounce(value, TIMEOUT);
+    const [listOfCities, setListOfCities] = useState([]);
 
-    const fetchOptions = async inputValue => {
-        const { status, response } = await prefetchOptions(inputValue);
-        if (status === 'success') {
-            setOptions([...response.data]);
-        }
-    };
-
-    const handleChange = async e => {
-        setValue(e.target.value);
-    };
-
-    useEffect(() => {
-        if (debouncedSearch) {
-            fetchOptions(value);
-        }
-        if (!value) {
-            setOptions([]);
-        }
-    }, [debouncedSearch]);
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        if (value) {
-            // handle submit here
-        }
-    };
+    const options = useOptions(value);
 
     return (
         <Container>
             <SelectComponent
                 value={value}
-                handleSelectOption={setValue}
-                handleSubmit={handleSubmit}
-                handleChange={handleChange}
+                handleSetValue={setValue}
+                setListOfCities={setListOfCities}
                 options={options}
             />
-            <Results>Lorem upsum dolor</Results>
+            <Results>
+                {listOfCities.map((cityName) => (
+                    <ResultsItemComponent key={cityName}>
+                        {cityName}
+                    </ResultsItemComponent>
+                ))}
+            </Results>
         </Container>
     );
 };

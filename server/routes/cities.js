@@ -9,8 +9,7 @@ router.get('/prefetch', async (req, res) => {
 
         const response = await getCities(prefix);
         res.status(200).json({ status: 'success', response });
-    }
-    catch (e) {
+    } catch (e) {
         console.log(e);
         res.status(404).json({ status: 'error' });
     }

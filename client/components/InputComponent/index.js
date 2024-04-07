@@ -1,18 +1,10 @@
 import React from 'react';
 
-import {
-    Container,
-    Input,
-} from './style';
+import { Container, Input } from './style';
 
-const InputComponent = ({
-    value,
-    name,
-    onClick,
-    onChange,
-}) => {
-    const handleClick = () => {
-        onClick(true);
+const InputComponent = ({ value, name, onChange, setIsActive }) => {
+    const handleChange = (e) => {
+        onChange(e.target.value);
     };
 
     return (
@@ -20,8 +12,8 @@ const InputComponent = ({
             <Input
                 value={value}
                 name={name}
-                onClick={handleClick}
-                onChange={onChange}
+                onChange={handleChange}
+                onFocus={() => setIsActive(true)}
             />
         </Container>
     );

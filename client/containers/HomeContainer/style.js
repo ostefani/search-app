@@ -6,13 +6,15 @@ const Container = styled.div`
     position: relative;
     margin: 50px auto 0 auto;
 `;
-const Results = styled.h1`
+const Results = styled.ul`
     font-size: 1.5rem;
-    color: ${({ theme: { colors: { primary } } }) => primary};
+    color: ${({
+        theme: {
+            colors: { primary },
+        },
+    }) => primary};
     margin-top: 40px;
+    padding-left: 0;
 `;
 
-export {
-    Container,
-    Results,
-};
+export { Container, Results };
