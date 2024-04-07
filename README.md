@@ -4,8 +4,6 @@ This is a code example, not a real world application.
 Search cities application, adds cities to a list, it doesn't save the list in DB.
 Created using JavaScript and PostgreSQL.
 
-## Demo is available here (it was previously deployed on DO an now it's not avalable)
-
 [Demo](http://64.226.104.96:3001/)
 
 ## Tech Stack
